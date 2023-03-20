@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+--- 
+
+## Flashcard App
+    
+[![Flashcard App Screenshot](./src/assets/screenshot.png)](./src/assets/screenshot.png)
