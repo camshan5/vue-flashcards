@@ -1,19 +1,23 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HeaderComponent from "./components/Header.vue";
+import FlashcardApp from "@/components/FlashcardApp.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="./assets/logo.svg"
+      width="125"
+      height="125"
+    />
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HeaderComponent msg="Vue Flashcards!" />
     </div>
   </header>
-
   <main>
-    <TheWelcome />
+    <FlashcardApp />
   </main>
 </template>
 
