@@ -1,6 +1,6 @@
-@import './base.css';
+@import "./base.css";
 
-#app {
+#flashcard-app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -21,15 +21,150 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.hr-padding {
+  padding: 0 2rem;
+  margin: 2rem 1rem;
+  color: #ccc;
+  border-color: #cccccc;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+
+ul {
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px 10px;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 100%;
+  padding: 2em;
+}
+
+.card {
+  display: flex;
+  width: 250px;
+  height: 240px;
+  padding: 2rem 1rem;
+  background-color: #34495e;
+  border-radius: 0.33rem;
+  margin: 0.5rem;
+  text-align: start;
+  line-height: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+li:nth-child(-n + 3) .card {
+  background-color: #3b6f69;
+}
+
+li:nth-child(2n + 1) .card {
+  background-color: #396773;
+}
+
+li:nth-child(4n) .card {
+  background-color: #334e6b;
+}
+
+li:nth-child(5n-2) .card {
+  background-color: #03996b;
+}
+
+li:nth-child(4n + 4) .card {
+  background-color: #113a65;
+}
+
+li:nth-child(-7n + 7) .card {
+  background-color: #365a84;
+}
+
+.delete-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 15px;
+  opacity: 0.4;
+  transition: all 0.5s ease;
+}
+
+.delete-card:hover,
+.error {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+.flip-enter-active {
+  transition: all 0.4s ease;
+}
+
+.flip-leave-active {
+  display: none;
+}
+
+.flip-enter,
+.flip-leave {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+/* Form */
+.flashcard-form {
+  position: relative;
+  margin-top: 2em;
+}
+
+label {
+  font-weight: 400;
+  color: #3b3e5b;
+  margin-right: 10px;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px solid #eaeaea;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  color: #3b3e5b;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid hsla(160, 100%, 37%, 1);
+  background-color: hsla(160, 100%, 37%, 1);
+  padding: 10px 15px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: hsla(160, 100%, 37%, 75%);;
+}
+
+.error {
+  margin-top: 10px;
+  display: block;
+  color: #e44e42;
+  font-weight: 600;
 }
